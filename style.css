@@ -1,0 +1,154 @@
+/* Reset mínimo */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+    --bg: #1f1f1f;
+    --panel: #0f0f0f;
+    --display-bg: #222;
+    --display-text: #ffffff;
+    --muted: #9aa0a6;
+    --btn-bg: #2b2b2b;
+    --btn-light: #3a3a3a;
+    --btn-fn: #444;
+    --accent: #0078d7; /* botão = azul padrão Windows */
+    --gap: 12px;
+    --radius: 8px;
+}
+
+/* Body e container */
+body{
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #2e2e2e;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: var(--display-text);
+}
+
+/* centraliza e limita largura */
+.container{
+    width: 100%;
+    max-width: 420px;
+    display:flex;
+    justify-content:center;
+}
+
+/* calculadora */
+.calculator{
+    width: 340px;
+    background: transparent;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.6),
+        inset 0 2px 0 rgba(255,255,255,0.02);
+    border: 1px solid rgba(0,0,0,0.6);
+}
+
+/* display */
+.display{
+    background: linear-gradient(180deg, #1e1e1e, #191919);
+    padding: 14px;
+    border-radius: 8px;
+    color: var(--display-text);
+    margin-bottom: 14px;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.6) inset;
+}
+
+.operation{
+    color: var(--muted);
+    font-size: 14px;
+    min-height: 18px;
+    text-align: right;
+    margin-bottom: 6px;
+    padding-right: 6px;
+    word-break: break-all;
+}
+
+.result{
+    font-size: 32px;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 6px;
+    line-height: 1;
+    min-height: 40px;
+    letter-spacing: 0.5px;
+}
+
+/* botões em grid */
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+}
+
+/* botão base */
+button{
+    background: var(--btn-bg);
+    border: none;
+    color: #eaeaea;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.6);
+    transition: transform 0.06s ease, box-shadow 0.06s ease;
+    user-select: none;
+}
+
+/* states */
+button:active{
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.6);
+}
+
+/* diferentes tipos */
+button.number{
+    background: var(--btn-light);
+    color: #e6e6e6;
+}
+
+button.function{
+    background: var(--btn-fn);
+    color: #e6e6e6;
+}
+
+button.operator{
+    background: #343434;
+    color: #f2f2f2;
+}
+
+button.equal{
+    background: var(--accent);
+    color: white;
+}
+
+/* botão 0 mais largo (como Windows) */
+button.wide{
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 22px;
+}
+
+/* equal grande ocupa duas linhas visualmente no fim */
+.big-equal{
+    grid-column: 4 / 5;
+    grid-row: 6 / 8;
+    height: calc(48px * 2 + var(--gap));
+    align-self: stretch;
+}
+
+/* responsividade */
+@media (max-width: 420px){
+    .calculator{ width: 94%; }
+    .result{ font-size: 28px; }
+    button{ padding: 12px; font-size: 18px; }
+}
+
+/* foco acessibilidade */
+button:focus{
+    outline: 2px solid rgba(0,120,215,0.45);
+    outline-offset: 2px;
+}

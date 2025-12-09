@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora Windows</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+    <div class="calculator" role="application" aria-label="Calculadora">
+        <div class="display" aria-hidden="false">
+            <div id="operation" class="operation" aria-live="polite"></div>
+            <div id="result" class="result" aria-live="assertive">0</div>
+        </div>
+
+        <div class="buttons" role="group" aria-label="Teclado da calculadora">
+            <button class="btn function" data-action="clear" aria-label="Limpar tudo">C</button>
+            <button class="btn function" data-action="clear-entry" aria-label="Limpar entrada">CE</button>
+            <button class="btn function" data-action="back" aria-label="Apagar">⌫</button>
+            <button class="btn operator" data-action="/" aria-label="Dividir">÷</button>
+
+            <button class="btn number" data-value="7">7</button>
+            <button class="btn number" data-value="8">8</button>
+            <button class="btn number" data-value="9">9</button>
+            <button class="btn operator" data-action="*" aria-label="Multiplicar">×</button>
+
+            <button class="btn number" data-value="4">4</button>
+            <button class="btn number" data-value="5">5</button>
+            <button class="btn number" data-value="6">6</button>
+            <button class="btn operator" data-action="-" aria-label="Subtrair">−</button>
+
+            <button class="btn number" data-value="1">1</button>
+            <button class="btn number" data-value="2">2</button>
+            <button class="btn number" data-value="3">3</button>
+            <button class="btn operator" data-action="+" aria-label="Somar">+</button>
+
+            <button class="btn number wide" data-value="0">0</button>
+            <button class="btn number" data-value=",">,</button>
+            <button class="btn function" data-action="plusminus" aria-label="Inverter sinal">+/-</button>
+            <button class="btn function" data-action="percent" aria-label="Porcentagem">%</button>
+
+            <button class="btn equal big-equal" data-action="equal" aria-label="Igual">=</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
